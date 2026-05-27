@@ -1,0 +1,11 @@
+{
+    "voice_rate": 150,
+    "default_volume": 1.0,
+    "wake_word_sensitivity": 0.35,
+    "groq_api_key": "YOUR_GROQ_API_KEY_HERE",
+    "alarm_folders": [
+        "Chill",
+        "Devotional"
+    ],
+    "telegram_token": "YOUR_TELEGRAM_TOKEN_HERE"
+}

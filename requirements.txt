@@ -1,0 +1,23 @@
+# Core
+numpy
+logging
+
+# Audio Processing (STT/TTS)
+faster-whisper
+sounddevice
+pyaudio
+scipy
+onnxruntime
+openwakeword
+
+# Playback & Media
+pygame
+yt-dlp
+
+# Logic & Utils
+fuzzywuzzy
+python-Levenshtein
+schedule
+pyyaml
+requests
+tqdm

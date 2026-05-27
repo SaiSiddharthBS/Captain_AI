@@ -1,0 +1,916 @@
+/* =========================================================================
+   CAPTAIN AI - V3 "UNIMAGINABLE" LIQUID GLASS ENGINE
+   High-Fashion Tech, Digital Brutalism, Holographic Meshes
+   ========================================================================= */
+
+:root {
+    /* Absolute Void */
+    --clr-abyss: #010103;
+    /* Primary Text */
+    --clr-ink: #FFFFFF;
+    /* Sub-text */
+    --clr-ash: #7A8191;
+
+    /* Liquid Holographics */
+    --aurora-1: #0A66FF;
+    /* Electric Blue */
+    --aurora-2: #B200FF;
+    /* Deep Purple */
+    --aurora-3: #00E4FF;
+    /* Cyan */
+    --aurora-4: #FF0055;
+    /* Magenta Accent */
+
+    /* Structural Elements */
+    --glass-membrane: rgba(20, 22, 28, 0.4);
+    --glass-stroke: rgba(255, 255, 255, 0.04);
+
+    /* Typography */
+    --font-heading: 'Syne', sans-serif;
+    --font-reading: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-abyss);
+    color: var(--clr-ink);
+    font-family: var(--font-reading);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* =========================================================================
+   LIQUID AURORA BACKGROUND (The "Unimaginable" Canvas)
+   ========================================================================= */
+.liquid-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    overflow: hidden;
+    background: var(--clr-abyss);
+}
+
+.noise-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Liquid Mesh Gradients - Slowly morphing blobs of plasma */
+.mesh-aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.15;
+    mix-blend-mode: screen;
+    animation: liquid-morph 25s infinite cubic-bezier(0.4, 0, 0.2, 1) alternate;
+}
+
+.glow-1 {
+    background: var(--aurora-1);
+    width: 60vw;
+    height: 60vw;
+    top: -10%;
+    left: -20%;
+}
+
+.glow-2 {
+    background: var(--aurora-2);
+    width: 50vw;
+    height: 50vw;
+    bottom: 10%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+.glow-3 {
+    background: var(--aurora-3);
+    width: 40vw;
+    height: 40vw;
+    top: 40%;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+.glow-4 {
+    background: var(--aurora-4);
+    width: 30vw;
+    height: 30vw;
+    top: 10%;
+    right: 20%;
+    opacity: 0.08;
+    animation-delay: -15s;
+}
+
+@keyframes liquid-morph {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: translate(15%, 15%) scale(1.2) rotate(180deg);
+        border-radius: 40% 60% 70% 30%;
+    }
+
+    100% {
+        transform: translate(-15%, 5%) scale(0.9) rotate(360deg);
+        border-radius: 60% 40% 30% 70%;
+    }
+}
+
+/* =========================================================================
+   TYPOGRAPHY (High-Fashion UI)
+   ========================================================================= */
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+}
+
+.liquid-text {
+    background: linear-gradient(135deg, var(--aurora-3), var(--aurora-1), var(--aurora-2));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flow-gradient 8s ease infinite;
+}
+
+@keyframes flow-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================================================================
+   NAVIGATION (Invisible Architecture)
+   ========================================================================= */
+.liquid-nav {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1400px;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 15, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-stroke);
+    border-radius: 100px;
+    padding: 10px 40px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a:not(.btn-ghost) {
+    color: var(--clr-ash);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: color 0.4s ease;
+}
+
+.nav-links a:not(.btn-ghost):hover {
+    color: var(--clr-ink);
+}
+
+/* =========================================================================
+   GHOST BUTTONS
+   ========================================================================= */
+.btn-ghost {
+    padding: 10px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: var(--clr-ink);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-ghost:hover {
+    background: var(--clr-ink);
+    color: var(--clr-abyss);
+    transform: scale(1.05);
+}
+
+.btn-liquid {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--clr-ink);
+    color: var(--clr-abyss);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.btn-liquid:hover {
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================================================
+   CINEMATIC HERO (The Orbital Core)
+   ========================================================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+}
+
+/* The Hollow Ring Orb */
+.hero-orb-ring {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.orb-core {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: inset 0 0 20px rgba(0, 228, 255, 0.1);
+}
+
+.orb-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+/* Floating resonance rings */
+.hero-orb-ring::before,
+.hero-orb-ring::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 228, 255, 0.2);
+    z-index: 1;
+}
+
+.hero-orb-ring::before {
+    width: 200px;
+    height: 200px;
+    animation: pulse-out 6s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-orb-ring::after {
+    width: 250px;
+    height: 250px;
+    animation: pulse-out 6s infinite cubic-bezier(0.16, 1, 0.3, 1) 3s;
+}
+
+@keyframes pulse-out {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.headline {
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 1.05;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.sub-headline {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--clr-ash);
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.action-cluster {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Vanguard Scroll Line */
+.scroll-vanguard {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.line-drop {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.scroll-vanguard span {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--clr-ash);
+    font-family: var(--font-heading);
+}
+
+/* =========================================================================
+   STRUCTURAL ASYMMETRICAL GRID (Content Matrix)
+   ========================================================================= */
+.content-matrix {
+    max-width: 1400px;
+    /* Constrained slightly for perfectly aligned margins */
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.matrix-section {
+    padding: 120px 0;
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Perfect absolute centering */
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.section-heading .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    color: var(--clr-ink);
+}
+
+.heading-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--aurora-1), var(--aurora-3));
+    border-radius: 3px;
+}
+
+/* Asymmetrical Grid layout */
+.asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+/* Span utilities for true editorial layout */
+.span-heavy {
+    grid-column: span 8;
+}
+
+.span-light {
+    grid-column: span 4;
+}
+
+.span-medium {
+    grid-column: span 6;
+}
+
+.span-wide {
+    grid-column: span 12;
+}
+
+/* Liquid Glass Cards */
+.liquid-card {
+    position: relative;
+    padding: 50px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 400px;
+    /* Invisible base */
+    background: transparent;
+    z-index: 10;
+}
+
+.card-glass {
+    position: absolute;
+    inset: 0;
+    background: var(--glass-membrane);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-stroke);
+    border-radius: 30px;
+    z-index: -1;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.liquid-card:hover .card-glass {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+}
+
+.card-index {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    line-height: 1;
+    transition: color 0.6s ease;
+}
+
+.liquid-card:hover .card-index {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.card-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-content p {
+    color: var(--clr-ash);
+    font-size: 1.1rem;
+    max-width: 100%;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* Architecture Split Frame */
+.arch-frame {
+    position: relative;
+    border-radius: 30px;
+    padding: 80px;
+    min-height: 600px;
+}
+
+.frame-glass {
+    position: absolute;
+    inset: 0;
+    background: var(--glass-membrane);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-stroke);
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.frame-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.arch-copy h3 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.arch-copy p {
+    color: var(--clr-ash);
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.spec h4 {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--aurora-3);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.spec span {
+    font-size: 1.1rem;
+}
+
+/* Code Visualizer Slab */
+.arch-visualizer {
+    background: #000;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 1);
+    display: flex;
+    align-items: center;
+}
+
+.code-slate {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.c-blue {
+    color: #5B8CFF;
+}
+
+.c-gold {
+    color: #D7BA7D;
+}
+
+.c-purple {
+    color: #C586C0;
+}
+
+.line.empty {
+    height: 1.8rem;
+}
+
+/* 3-Col Grid */
+.bento-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Privacy Slab */
+.privacy-slab {
+    position: relative;
+    border-radius: 30px;
+    padding: 80px;
+}
+
+.slab-glass {
+    position: absolute;
+    inset: 0;
+    background: var(--glass-membrane);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-stroke);
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.slab-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.slab-text h3 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.slab-text p {
+    color: var(--clr-ash);
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Abstract Lock Graphic */
+.slab-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.lock-graphic {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lock-graphic .circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--clr-ash);
+    border-radius: 50%;
+    border-bottom-color: transparent;
+}
+
+.lock-graphic .line {
+    width: 60px;
+    height: 60px;
+    background: var(--clr-ink);
+    border-radius: 10px;
+    margin-top: -10px;
+}
+
+/* About Prose */
+.prose-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.manifesto {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 60px;
+    text-align: justify;
+    color: var(--clr-ash);
+    text-align-last: center;
+    /* Centers the very last line of the justified paragraph */
+}
+
+.signature {
+    font-family: var(--font-heading);
+    color: var(--clr-ink);
+    letter-spacing: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* Deployment Terminal Section */
+.deployment-section {
+    padding: 150px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.deploy-glass {
+    position: relative;
+    padding: 80px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    background: var(--glass-membrane);
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-stroke);
+}
+
+.deploy-glass h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.deploy-glass p {
+    color: var(--clr-ash);
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+}
+
+.terminal-form {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    margin: 0 auto;
+    /* Ensuring absolute absolute centering */
+    max-width: 700px;
+}
+
+.input-lock {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    flex: 1;
+    /* Takes remaining space cleanly */
+}
+
+.prompt {
+    color: var(--aurora-3);
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.cipher-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: var(--font-reading);
+    font-size: 1.1rem;
+    width: 100%;
+    height: 60px;
+}
+
+/* Footer Abyss */
+.abyss-footer {
+    padding: 80px 5%;
+}
+
+.footer-grid {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid var(--glass-stroke);
+    padding-top: 40px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links a {
+    color: var(--clr-ash);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.footer-legal {
+    color: var(--clr-ash);
+    font-size: 0.9rem;
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    transition-delay: 0.5s;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+
+    .span-heavy,
+    .span-light,
+    .span-medium,
+    .span-wide {
+        grid-column: span 12;
+    }
+
+    .arch-frame,
+    .privacy-slab {
+        padding: 40px;
+    }
+
+    .frame-content,
+    .slab-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bento-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .terminal-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-lock {
+        width: 100%;
+    }
+}
