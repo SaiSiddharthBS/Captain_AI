@@ -144,8 +144,15 @@ flowchart TD
 
 ### System Interface Screenshots
 <div align="center">
-  <img src="assets/screenshot1.png" width="400" alt="Ghost HUD Interface">
-  <img src="assets/screenshot2.png" width="400" alt="Terminal Output">
+ 
+  <img src="assets/screenshot1.png" width="400" alt="Ghost HUD Interface"> <br>
+
+---
+  
+  <img src="assets/screenshot2.png" width="400" alt="Terminal Output"> <br>
+
+---
+  
   <br>
   <img src="assets/screenshot3.png" width="800" alt="Full System View">
 </div>
