@@ -1,0 +1,7 @@
+*.py
+src/
+tools/
+requirements.txt
+config.json
+*.bat
+.github/
