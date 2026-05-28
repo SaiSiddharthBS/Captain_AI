@@ -28,7 +28,7 @@ all orchestrated through a single intent-routing engine.
 
 <br>
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # 1. Clone
@@ -49,7 +49,7 @@ run_v2.bat
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ### High-Level Block Diagram
 
@@ -150,7 +150,7 @@ flowchart TD
 
 ---
 
-## 🎯 Feature Matrix
+## Feature Matrix
 
 | Category | Feature | Implementation Detail |
 |:---|:---|:---|
@@ -182,7 +182,7 @@ flowchart TD
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
 <table>
 <tr><th>Layer</th><th>Technology</th><th>Role</th><th>Specification</th></tr>
@@ -211,7 +211,7 @@ flowchart TD
 
 ---
 
-## 📸 Media & Demonstrations
+## Media & Demonstrations
 
 ### System Interface Screenshots
 
@@ -248,7 +248,7 @@ https://github.com/SaiSiddharthBS/Captain_AI/raw/main/assets/demo_gmail.mp4
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Captain_AI/
@@ -293,7 +293,7 @@ Captain_AI/
 
 ---
 
-## ⚙ Setup & Deployment
+## Setup & Deployment
 
 ### Prerequisites
 
@@ -357,7 +357,7 @@ python install_ffmpeg.py
 
 ---
 
-## 🛡️ The Sovereign Data Doctrine
+## The Sovereign Data Doctrine
 
 Captain AI operates under strict data sovereignty principles:
 
@@ -371,7 +371,7 @@ Captain AI operates under strict data sovereignty principles:
 
 ---
 
-## 🗺 Roadmap
+## Roadmap
 
 - [ ] Custom wake word training (`"Hey Captain"` via OpenWakeWord fine-tuning)
 - [ ] macOS + Linux cross-platform support
@@ -383,7 +383,7 @@ Captain AI operates under strict data sovereignty principles:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome. Please follow these guidelines:
 
