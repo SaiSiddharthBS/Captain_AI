@@ -215,6 +215,8 @@ flowchart TD
 
 ### System Interface Screenshots
 
+<div align="center">
+
 *Phase 1 — Lightweight GUI prototype featuring real-time terminal logs, modular toggle controls, and the core voice-activated listening loop.*
 <br>
 <img src="assets/screenshot1.png" width="400" alt="Phase 1 GUI Prototype">
