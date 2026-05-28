@@ -217,19 +217,19 @@ flowchart TD
 
 <div align="center">
 
-*Phase 1 — Lightweight GUI prototype featuring real-time terminal logs, modular toggle controls, and the core voice-activated listening loop.*
+*Phase 1 — Lightweight GUI prototype featuring real-time terminal logs, modular toggle controls, and the core voice-activated listening loop.* <br>
 <br>
 <img src="assets/screenshot1.png" width="400" alt="Phase 1 GUI Prototype">
 
 ---
 
-*Phase 2 — Ghost HUD — An Apple Dynamic Island-inspired, frameless cyberpunk overlay summoned via global hotkey, with real-time screen awareness and voice-activated AI at the top of your screen.*
+*Phase 2 — Ghost HUD — An Apple Dynamic Island-inspired, frameless cyberpunk overlay summoned via global hotkey, with real-time screen awareness and voice-activated AI at the top of your screen.* <br>
 <br>
 <img src="assets/screenshot2.png" width="400" alt="Ghost HUD Overlay">
 
 ---
 
-*Telegram Integration — A fully remote, Llama-powered mobile interface that puts Captain AI in your pocket — answer questions and execute system commands on the go.*
+*Telegram Integration — A fully remote, Llama-powered mobile interface that puts Captain AI in your pocket — answer questions and execute system commands on the go.* <br>
 <br>
 <img src="assets/screenshot3.png" width="800" alt="Telegram Bot Interface">
 
