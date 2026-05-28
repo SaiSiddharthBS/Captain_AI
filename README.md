@@ -176,6 +176,7 @@ flowchart TD
 | | State visualization | Contextual glow: Cyan (Listening) · Deep Blue (Processing) · Green (Speaking) |
 | | IPC | WebSocket client → `ws://localhost:8765` · JSON message protocol · async state broadcasts |
 | | Activation | Global hotkey: `Ctrl+Shift+Space` · system tray icon via `pystray` |
+| **Promotional Frontend** | Awwwards-grade Site | GSAP-powered cinematic scroll animations, Lenis smooth scrolling, liquid mesh gradients, and magnetic custom cursors |
 
 ---
 

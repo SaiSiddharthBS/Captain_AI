@@ -1,296 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captain AI | The Sentinel Engine</title>
-    <!-- 
-      Typography: 
-      'Syne' - Highly structural, avant-garde, screams uniqueness and high-fashion tech.
-      'Manrope' - Razor-sharp, technical geometric sans for dignity and readability.
-    -->
+    <title>Captain AI | Autonomous Intelligence</title>
+    
+    <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Syne:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lenis CSS for smooth scrolling -->
+    <style>
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+        .lenis.lenis-smooth iframe {
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <!-- Hyper-Immersive Liquid Aurora Background -->
+    <!-- Cinematic Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo-container">
+                <img src="../assets/Logo.png" alt="Captain AI" class="preloader-logo">
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-percentage">00</span>
+                <span class="loading-sys">INITIALIZING_CORE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Matrix -->
     <div class="liquid-canvas">
         <div class="mesh-aurora glow-1"></div>
         <div class="mesh-aurora glow-2"></div>
         <div class="mesh-aurora glow-3"></div>
-        <div class="mesh-aurora glow-4"></div>
         <div class="noise-layer"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="liquid-nav reveal delay-5">
+    <nav class="liquid-nav">
         <div class="nav-container">
-            <img src="../assets/Logo.png" alt="Captain AI" class="logo" style="height: 40px;">
+            <img src="../assets/Logo.png" alt="Captain AI Logo" class="logo">
             <div class="nav-links">
-                <a href="#features">Capabilities</a>
-                <a href="#architecture">Architecture</a>
-                <a href="#integrations">Integrations</a>
-                <a href="#privacy">Privacy</a>
-                <a href="#about">Genesis</a>
-                <a href="#download" class="btn-ghost">Acquire</a>
+                <a href="#capabilities" class="hover-magnet">Capabilities</a>
+                <a href="#architecture" class="hover-magnet">Architecture</a>
+                <a href="#privacy" class="hover-magnet">Privacy</a>
+                <a href="#download" class="btn-ghost hover-magnet">Acquire</a>
             </div>
         </div>
     </nav>
 
-    <!-- Cinematic Hero -->
-    <header class="hero">
-        <div class="hero-wrapper">
-            <div class="hero-orb-ring reveal delay-1">
-                <div class="orb-core">
-                    <span class="orb-text">CAPT<br /><span class="liquid-text">AI</span>N</span>
-                </div>
-                <div class="orb-resonance"></div>
-            </div>
+    <!-- Smooth Scroll Wrapper -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
 
-            <div class="hero-typography">
-                <h1 class="headline reveal delay-2">Unimagined. <span class="liquid-text">Unbound.</span></h1>
-                <p class="sub-headline reveal delay-3">More than an assistant. A sovereign cognitive entity residing
-                    entirely within your local silicon. The undisputed pinnacle of offline intelligence.</p>
-                <div class="action-cluster reveal delay-4">
-                    <a href="#download" class="btn-liquid magnetic"><span>Initialize Sentinel</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-vanguard reveal delay-5">
-            <div class="line-drop"></div>
-            <span>DESCEND</span>
-        </div>
-    </header>
-
-    <!-- Structural Grid Architecture -->
-    <main class="content-matrix">
-
-        <!-- Features Matrix -->
-        <section id="features" class="matrix-section">
-            <div class="section-heading reveal">
-                <h2 class="title">I. CAPABILITIES</h2>
-                <div class="heading-line"></div>
-            </div>
-
-            <div class="asymmetric-grid">
-                <div class="liquid-card span-heavy reveal">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <div class="card-index">01</div>
-                        <h3>Telephonic Symbiosis</h3>
-                        <p>Through raw physical ADB bridging, Captain usurps local Android operating systems to execute
-                            zero-cost cellular communications via WhatsApp. Unbound by Twilio API costs, the system
-                            streams surrounding atmospheric audio continuously into the Mind during active VoIP links.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="liquid-card span-light reveal delay-1">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <div class="card-index">02</div>
-                        <h3>Active Optics</h3>
-                        <p>Total screen awareness driven by Llama 3.2-Vision running fully offline.</p>
-                    </div>
-                </div>
-
-                <div class="liquid-card span-medium reveal delay-2">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <div class="card-index">03</div>
-                        <h3>Hybrid RAG Retrieval</h3>
-                        <p>Concurrent multithreaded injection of DuckDuckGo and Wikipedia datasets natively intercepts
-                            the neural prompting phase, reducing hallucination vectors to literal zero.</p>
-                    </div>
-                </div>
-
-                <div class="liquid-card span-wide reveal delay-1">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <div class="card-index">04</div>
-                        <h3>Secure Encrypted Uplink</h3>
-                        <p>Command the host terminal from anywhere on Earth via a cryptographic Telegram tunnel.
-                            Remotely deploy code, lock hardware, or trigger generative actions without exposing open
-                            ports.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture Sub-Sector -->
-        <section id="architecture" class="matrix-section">
-            <div class="section-heading reveal">
-                <h2 class="title">II. THE ARCHITECTURE</h2>
-                <div class="heading-line"></div>
-            </div>
-
-            <div class="arch-frame reveal delay-1">
-                <div class="frame-glass"></div>
-                <div class="frame-content">
-                    <div class="arch-copy">
-                        <h3>A Headless Apparition</h3>
-                        <p>Captain operates entirely as a dark WebSocket daemon. The visual layer is a phantom—a
-                            frameless PyQt6 overlay that renders directly onto the OS compositor, injecting itself over
-                            your active workflow exclusively when summoned.</p>
-
-                        <div class="spec-grid">
-                            <div class="spec">
-                                <h4>AURAL ENGINE</h4>
-                                <span>faster-whisper (CTranslate2)</span>
-                            </div>
-                            <div class="spec">
-                                <h4>VOCAL ENGINE</h4>
-                                <span>Piper TTS (ONNX Array)</span>
-                            </div>
-                            <div class="spec">
-                                <h4>COGNITION CORE</h4>
-                                <span>Groq Llama 3.3 70B</span>
-                            </div>
-                            <div class="spec">
-                                <h4>FACE INTERFACE</h4>
-                                <span>Headless WebSockets / PyQt6</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="arch-visualizer">
-                        <div class="code-slate">
-                            <!-- Visual representation of the core engine -->
-                            <div class="line"><span class="c-blue">async def</span> <span
-                                    class="c-gold">init_sentinel</span>():</div>
-                            <div class="line"> brain = PythonEventLoop()</div>
-                            <div class="line"> ear = ContinuousMemStream()</div>
-                            <div class="line"> ui = GhostOverlay(transparent=<span class="c-purple">True</span>)</div>
-                            <div class="line empty"></div>
-                            <div class="line"> <span class="c-blue">await</span> ui.attach_to_desktop()</div>
-                            <div class="line"> brain.begin_vigil()</div>
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="hero-wrapper">
+                    <div class="hero-typography">
+                        <h1 class="headline split-text">UNIMAGINED.<br><span class="liquid-text">UNBOUND.</span></h1>
+                        <p class="sub-headline fade-up">A sovereign cognitive entity residing entirely within your local silicon. The undisputed pinnacle of offline, multi-modal intelligence.</p>
+                        <div class="action-cluster fade-up">
+                            <a href="#download" class="btn-liquid magnetic" data-strength="50">
+                                <span class="magnetic-text">Initialize Sentinel</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Telemetry & Integrations (New Section) -->
-        <section id="integrations" class="matrix-section">
-            <div class="section-heading reveal">
-                <h2 class="title">III. ECOSYSTEM & TELEMETRY</h2>
-                <div class="heading-line"></div>
-            </div>
-
-            <div class="bento-grid-3">
-                <div class="liquid-card reveal">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <h3>OS Bridging</h3>
-                        <p>Deep hardware tie-ins allow manipulation of system volume, power states, and application
-                            spawning without UAC interference.</p>
-                    </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span class="scroll-text">DESCEND</span>
                 </div>
-                <div class="liquid-card reveal delay-1">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <h3>Vigilant Logging</h3>
-                        <p>Complete transcript capture with sub-millisecond timestamps, enabling timeline reconstruction
-                            of the entire acoustic environment.</p>
-                    </div>
-                </div>
-                <div class="liquid-card reveal delay-2">
-                    <div class="card-glass"></div>
-                    <div class="card-content">
-                        <h3>Ollama Interop</h3>
-                        <p>Hot-swappable local LLM architecture. Evolve the Mind arbitrarily by dragging and dropping
-                            new GGUF models into the `models/` array.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- Privacy Matrix -->
-        <section id="privacy" class="matrix-section">
-            <div class="section-heading reveal">
-                <h2 class="title">IV. CRYPTOGRAPHIC ISOLATION</h2>
-                <div class="heading-line"></div>
-            </div>
+            <main class="content-matrix">
 
-            <div class="privacy-slab reveal delay-1">
-                <div class="slab-glass"></div>
-                <div class="slab-content">
-                    <div class="slab-text">
-                        <h3>The Sovereign Data Doctrine</h3>
-                        <p>No analytics. No telemetry. No middle-man servers. Captain is fundamentally air-gapped by
-                            design. Emotional intelligence mapping, local alarms, and structural memories are recorded
-                            purely onto the host silicon using raw JSON arrays. You hold the encryption keys. You hold
-                            the infrastructure.</p>
+                <!-- Capabilities Matrix -->
+                <section id="capabilities" class="matrix-section">
+                    <div class="section-heading">
+                        <h2 class="title fade-up">I. CAPABILITIES</h2>
+                        <div class="heading-line stretch-line"></div>
                     </div>
-                    <div class="slab-icon">
-                        <div class="lock-graphic">
-                            <div class="circle"></div>
-                            <div class="line"></div>
+
+                    <div class="asymmetric-grid">
+                        <div class="liquid-card span-heavy parallax-card" data-speed="1.05">
+                            <div class="card-glass"></div>
+                            <div class="card-content">
+                                <div class="card-index">01</div>
+                                <h3>Telephonic Symbiosis</h3>
+                                <p>Through raw physical ADB bridging, Captain usurps local Android operating systems to execute zero-cost cellular communications via WhatsApp. Streams surrounding atmospheric audio continuously into the Mind during active VoIP links.</p>
+                            </div>
+                        </div>
+
+                        <div class="liquid-card span-light parallax-card" data-speed="1.1">
+                            <div class="card-glass"></div>
+                            <div class="card-content">
+                                <div class="card-index">02</div>
+                                <h3>Active Optics</h3>
+                                <p>Total screen awareness driven by Ollama and Moondream, running fully offline to read UI, code, and interfaces.</p>
+                            </div>
+                        </div>
+
+                        <div class="liquid-card span-medium parallax-card" data-speed="0.95">
+                            <div class="card-glass"></div>
+                            <div class="card-content">
+                                <div class="card-index">03</div>
+                                <h3>Hybrid Retrieval</h3>
+                                <p>Concurrent multithreaded injection of DuckDuckGo and Wikipedia datasets natively intercepts the neural prompting phase.</p>
+                            </div>
+                        </div>
+
+                        <div class="liquid-card span-wide parallax-card" data-speed="1.02">
+                            <div class="card-glass"></div>
+                            <div class="card-content">
+                                <div class="card-index">04</div>
+                                <h3>Encrypted Uplink</h3>
+                                <p>Command the host terminal from anywhere on Earth via a cryptographic Telegram tunnel. Remotely deploy code or trigger generative actions without exposing open ports.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- About Genesis -->
-        <section id="about" class="matrix-section">
-            <div class="section-heading reveal">
-                <h2 class="title">V. GENESIS</h2>
-                <div class="heading-line"></div>
-            </div>
+                <!-- Architecture Pin Section -->
+                <section id="architecture" class="matrix-section pin-section">
+                    <div class="section-heading">
+                        <h2 class="title fade-up">II. ARCHITECTURE</h2>
+                        <div class="heading-line stretch-line"></div>
+                    </div>
 
-            <div class="prose-container reveal delay-1">
-                <p class="manifesto">
-                    We engineered Captain to shatter the stagnant paradigm of corporate voice assistants. Alexa and Siri
-                    act merely as audio wrappers for search engines. Captain is different. Captain is a sovereign
-                    entity—built to possess memory, execute complex physical API interactions across desktop and mobile,
-                    and operate as an omnipresent extension of your own will.
-                </p>
-                <div class="signature">CAPTAIN AI ENGINEERING WING, 2026</div>
-            </div>
-        </section>
+                    <div class="arch-container">
+                        <div class="arch-left">
+                            <div class="arch-sticky-content">
+                                <h3>A Headless Apparition</h3>
+                                <p>Captain operates entirely as a dark WebSocket daemon. The visual layer is a phantom—a frameless PyQt6 overlay that renders directly onto the OS compositor, injecting itself over your active workflow exclusively when summoned.</p>
+                                
+                                <div class="spec-list">
+                                    <div class="spec-item fade-up">
+                                        <h4>AURAL ENGINE</h4>
+                                        <span>Faster-Whisper (INT8)</span>
+                                    </div>
+                                    <div class="spec-item fade-up">
+                                        <h4>VOCAL ENGINE</h4>
+                                        <span>Piper TTS (ONNX)</span>
+                                    </div>
+                                    <div class="spec-item fade-up">
+                                        <h4>COGNITION CORE</h4>
+                                        <span>Groq Llama 3.3 70B</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="arch-right">
+                            <div class="arch-visualizer">
+                                <div class="code-slate">
+                                    <div class="line"><span class="c-comment"># The Central Brain Router</span></div>
+                                    <div class="line"><span class="c-blue">async def</span> <span class="c-gold">init_sentinel</span>():</div>
+                                    <div class="line">    brain = IntentOrchestrator()</div>
+                                    <div class="line">    ear = ContinuousMemStream()</div>
+                                    <div class="line">    ui = GhostOverlay(<span class="c-arg">transparent</span>=<span class="c-purple">True</span>)</div>
+                                    <div class="line empty"></div>
+                                    <div class="line">    <span class="c-blue">await</span> ui.attach_to_compositor()</div>
+                                    <div class="line">    brain.begin_vigil()</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    </main>
+                <!-- Privacy Slab -->
+                <section id="privacy" class="matrix-section">
+                    <div class="section-heading">
+                        <h2 class="title fade-up">III. CRYPTOGRAPHIC ISOLATION</h2>
+                        <div class="heading-line stretch-line"></div>
+                    </div>
 
-    <!-- Terminal Deployment CTA -->
-    <section id="download" class="deployment-section reveal">
-        <div class="deploy-glass">
-            <div class="deploy-glow"></div>
-            <h2>AUTHORIZE ACQUISITION</h2>
-            <p>The system is currently restricted. Input your clearance vector.</p>
-            <form class="terminal-form">
-                <div class="input-lock">
-                    <span class="prompt">></span>
-                    <input type="email" placeholder="uplink@domain.com" class="cipher-input" required>
-                </div>
-                <button type="submit" class="btn-liquid magnetic"><span>TRANSMIT</span></button>
-            </form>
-        </div>
-    </section>
+                    <div class="privacy-slab parallax-card" data-speed="1.05">
+                        <div class="slab-glass"></div>
+                        <div class="slab-content">
+                            <div class="slab-text">
+                                <h3>The Sovereign Data Doctrine</h3>
+                                <p>No analytics. No telemetry. No middle-man servers. Captain is fundamentally air-gapped by design. Emotional intelligence mapping, local alarms, and structural memories are recorded purely onto the host silicon using raw JSON arrays. You hold the encryption keys. You hold the infrastructure.</p>
+                            </div>
+                            <div class="slab-icon">
+                                <div class="lock-graphic">
+                                    <div class="circle"></div>
+                                    <div class="line-element"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Footer -->
-    <footer class="abyss-footer">
-        <div class="footer-grid">
-            <img src="../assets/Logo.png" alt="Captain AI" class="footer-logo" style="height: 40px;">
-            <div class="footer-links">
-                <a href="#">Documentation</a>
-                <a href="#">Relay Nodes</a>
-                <a href="#">Clearance</a>
-            </div>
-            <div class="footer-legal">
-                &copy; 2026 Captain AI. All rights reserved locally.
-            </div>
-        </div>
-    </footer>
+                <!-- Terminal CTA -->
+                <section id="download" class="deployment-section">
+                    <div class="deploy-glass parallax-card" data-speed="0.95">
+                        <div class="deploy-glow"></div>
+                        <h2 class="fade-up">AUTHORIZE ACQUISITION</h2>
+                        <p class="fade-up">The system is currently restricted. Input clearance vector.</p>
+                        <form class="terminal-form fade-up">
+                            <div class="input-lock">
+                                <span class="prompt">></span>
+                                <input type="email" placeholder="uplink@domain.com" class="cipher-input" required>
+                            </div>
+                            <button type="submit" class="btn-liquid magnetic" data-strength="40">
+                                <span class="magnetic-text">TRANSMIT</span>
+                            </button>
+                        </form>
+                    </div>
+                </section>
 
+                <!-- Footer -->
+                <footer class="abyss-footer">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <img src="../assets/Logo.png" alt="Captain AI" class="footer-logo">
+                            <span class="footer-signature">ENGINEERING WING, 2026</span>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#" class="hover-magnet">Documentation</a>
+                            <a href="#" class="hover-magnet">Relay Nodes</a>
+                            <a href="#" class="hover-magnet">Clearance</a>
+                        </div>
+                        <div class="footer-legal">
+                            &copy; 2026 Captain AI.
+                        </div>
+                    </div>
+                </footer>
+
+            </main>
+        </div> <!-- End Smooth Content -->
+    </div> <!-- End Smooth Wrapper -->
+
+    <!-- Core Libraries -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- GSAP Core & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+    <!-- Note: SplitText is a premium plugin. We will simulate it with custom JS if not available via CDN -->
+    
     <script src="script.js"></script>
 </body>
-
 </html>
