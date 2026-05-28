@@ -1,6 +1,7 @@
 <div align="center">
   
-# 🧠 CAPTAIN AI
+<img src="assets/Logo.png" width="400" alt="Captain AI Logo">
+
 ### The Sentinel Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -136,6 +137,25 @@ flowchart TD
     L --> M[AI converses on phone line]
     M --> N[AI detects 'goodbye' & hangs up]
 ```
+
+---
+
+## 📸 Media & Demonstrations
+
+### System Interface Screenshots
+<div align="center">
+  <img src="assets/screenshot1.png" width="400" alt="Ghost HUD Interface">
+  <img src="assets/screenshot2.png" width="400" alt="Terminal Output">
+  <br>
+  <img src="assets/screenshot3.png" width="800" alt="Full System View">
+</div>
+
+### Video Demonstrations
+<div align="center">
+  <h4>Gmail Automation Demo</h4>
+  <video src="https://github.com/SaiSiddharthBS/Captain_AI/raw/main/assets/demo_gmail.mp4" controls="controls" width="800"></video>
+</div>
+
 
 ---
 
