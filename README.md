@@ -130,7 +130,7 @@ Fully autonomous call initiation, conversation, and hangup — zero human interv
 
 ```mermaid
 flowchart TD
-    A["User: 'Call Shibi on WhatsApp'"] --> B["Brain → ADBEngine"]
+    A["User: 'Call XYZ on WhatsApp'"] --> B["Brain → ADBEngine"]
     B --> C{"Screen on?"}
     C -->|No| D["adb shell KEYCODE_WAKEUP"]
     C -->|Yes| E["Force-stop com.whatsapp"]
