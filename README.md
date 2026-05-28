@@ -4,14 +4,12 @@
 
 ### The Sentinel Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Platform: Windows](https://img.shields.io/badge/platform-Windows-0078D6.svg)](https://microsoft.com/)
+[![Platform: macOS | Windows](https://img.shields.io/badge/platform-macOS_%7C_Windows-0078D6.svg)]()
 [![Status: Active](https://img.shields.io/badge/status-Active-brightgreen.svg)]()
 [![Ollama](https://img.shields.io/badge/Ollama-Local_Vision-orange.svg)]()
 [![Llama 3.3](https://img.shields.io/badge/Llama_3.3-70B-purple.svg)]()
 [![Web Search RAG](https://img.shields.io/badge/RAG-Web_Search-red.svg)]()
-
 
 > **Unimagined. Unbound.**<br>
 > A fully offline, voice-activated AI assistant for Windows. Powered by Groq, Ollama, Faster-Whisper STT, Piper TTS, and OpenWakeWord — operating completely within your local ecosystem.
@@ -148,27 +146,34 @@ flowchart TD
 
 ### System Interface Screenshots
 
-*Phase 1 Prototype that included a lightweight, functional GUI featuring real-time terminal logs, modular toggle controls and a core voice-activated AI listening loop.* <br>
+<div align="center">
 
+*Phase 1 Prototype that included a lightweight, functional GUI featuring real-time terminal logs, modular toggle controls and a core voice-activated AI listening loop.*
+<br>
 <img src="assets/screenshot1.png" width="400" alt="Ghost HUD Interface">
 
 ---
 
-*Ghost HUD: An Apple 'Dynamic Island'-inspired, frameless cyberpunk overlay summoned via global hotkey, featuring real-time screen awareness and voice-activated AI capabilities right at the top of your screen.* <br>
-
+*Ghost HUD: An Apple 'Dynamic Island'-inspired, frameless cyberpunk overlay summoned via global hotkey, featuring real-time screen awareness and voice-activated AI capabilities right at the top of your screen.*
+<br>
 <img src="assets/screenshot2.png" width="400" alt="Terminal Output">
 
 ---
 
-*Telegram Integration: A fully remote, Llama-powered mobile interface that puts the entire intelligence and automation power of Captain AI right in your pocket—ready to answer any question or execute system commands on the go.* <br>
-
+*Telegram Integration: A fully remote, Llama-powered mobile interface that puts the entire intelligence and automation power of Captain AI right in your pocket—ready to answer any question or execute system commands on the go.*
+<br>
 <img src="assets/screenshot3.png" width="800" alt="Full System View">
+
+</div>
 
 ### Video Demonstrations
 
-*Gmail Automation Demo - Please click on the link given below* <br>
+<div align="center">
 
+*Gmail Automation Demo - Please click on the link given below*  
 https://github.com/SaiSiddharthBS/Captain_AI/raw/main/assets/demo_gmail.mp4
+
+</div>
 
 
 ---
