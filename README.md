@@ -144,15 +144,21 @@ flowchart TD
 
 ### System Interface Screenshots
 <div align="center">
+
+**Phase 1 Prototype that included a lightweight, functional GUI featuring real-time terminal logs, modular toggle controls and a core voice-activated AI listening loop.**
  
   <img src="assets/screenshot1.png" width="400" alt="Ghost HUD Interface"> <br>
 
 ---
+
+**Ghost HUD: An Apple 'Dynamic Island'-inspired, frameless cyberpunk overlay summoned via global hotkey, featuring real-time screen awareness and voice-activated AI capabilities right at the top of your screen.**
   
   <img src="assets/screenshot2.png" width="400" alt="Terminal Output"> <br>
 
 ---
-  
+
+**Telegram Integration: A fully remote, Llama-powered mobile interface that puts the entire intelligence and automation power of Captain AI right in your pocket—ready to answer any question or execute system commands on the go.**
+
   <br>
   <img src="assets/screenshot3.png" width="800" alt="Full System View">
 </div>
