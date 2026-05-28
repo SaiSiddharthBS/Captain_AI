@@ -229,7 +229,7 @@ flowchart TD
 
 ---
 
-*Ghost HUD — An Apple Dynamic Island-inspired, frameless cyberpunk overlay summoned via global hotkey, with real-time screen awareness and voice-activated AI at the top of your screen.*
+*Phase 2 — Ghost HUD — An Apple Dynamic Island-inspired, frameless cyberpunk overlay summoned via global hotkey, with real-time screen awareness and voice-activated AI at the top of your screen.*
 <br>
 <img src="assets/screenshot2.png" width="400" alt="Ghost HUD Overlay">
 
