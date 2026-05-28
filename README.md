@@ -22,7 +22,7 @@ all orchestrated through a single intent-routing engine.
 
 [Quick Start](#-quick-start) · [Architecture](#-system-architecture) · [Features](#-feature-matrix) · [Tech Stack](#-technology-stack) · [Screenshots](#-media--demonstrations) · [Setup](#-setup--deployment) · [Privacy](#%EF%B8%8F-the-sovereign-data-doctrine)
 
-**✨ [View the Captain AI Promotional Website](https://htmlpreview.github.io/?https://github.com/SaiSiddharthBS/Captain_AI/blob/main/website/index.html) ✨**
+**✨ [View the Captain AI Promotional Website](https://saisiddharthbs.github.io/Captain_AI/) ✨**
 
 </div>
 
