@@ -22,7 +22,7 @@ all orchestrated through a single intent-routing engine.
 
 [Quick Start](#-quick-start) · [Architecture](#-system-architecture) · [Features](#-feature-matrix) · [Tech Stack](#-technology-stack) · [Screenshots](#-media--demonstrations) · [Setup](#-setup--deployment) · [Privacy](#%EF%B8%8F-the-sovereign-data-doctrine)
 
-**[captain-wheat.vercel.app]**
+**Website - captain-wheat.vercel.app**
 
 </div>
 
