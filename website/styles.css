@@ -90,8 +90,8 @@ body {
 }
 
 .preloader-logo {
-    width: 300px;
-    height: auto;
+    height: 40px;
+    width: auto;
     opacity: 1;
 }
 
@@ -176,7 +176,7 @@ body {
     padding: 10px 40px;
 }
 
-.logo { width: 200px; height: auto; }
+.logo { height: 25px; width: auto; }
 
 .nav-links { display: flex; align-items: center; gap: 40px; }
 .nav-links a {
@@ -400,7 +400,7 @@ body {
 /* Footer */
 .abyss-footer { padding: 80px 5% 40px; }
 .footer-grid { border-top: 1px solid var(--glass-stroke); padding-top: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
-.footer-logo { width: 200px; height: auto; margin-bottom: 10px; }
+.footer-logo { height: 25px; width: auto; margin-bottom: 10px; }
 .footer-signature { display: block; font-family: var(--font-heading); font-size: 0.7rem; color: var(--clr-ash); letter-spacing: 2px; }
 .footer-links { display: flex; gap: 40px; }
 .footer-links a { color: var(--clr-ash); text-decoration: none; font-size: 0.9rem; }
