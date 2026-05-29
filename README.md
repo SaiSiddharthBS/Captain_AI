@@ -49,9 +49,7 @@ run_v2.bat
 
 ---
 
-## System Architecture
-
-![Architecture Overview](assets/neon_architecture.png)
+## 🏗 System Architecture
 
 ### High-Level Block Diagram
 
