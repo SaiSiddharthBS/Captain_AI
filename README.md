@@ -55,19 +55,98 @@ run_v2.bat
 
 The system follows a **hub-and-spoke architecture** with the `Brain` class acting as the central intent router. All I/O subsystems — audio capture, speech synthesis, vision, LLM inference, and device control — are initialized as independent engine instances and orchestrated through a single `process_input()` → `_route_intent()` dispatch pipeline.
 
-![Architecture Overview](assets/architecture.png)
+```mermaid
+graph TD
+    subgraph "Frontend Layer"
+        HUD["Ghost HUD<br/><small>PyQt6 · HTML5/CSS3 · WebSocket Client</small>"]
+        V7["Legacy GUI<br/><small>CustomTkinter</small>"]
+    end
+
+    subgraph "Orchestration Layer"
+        WS["WebSocket Server<br/><small>ws://localhost:8765</small>"]
+        Brain["Brain — Intent Router<br/><small>20+ intent handlers · fuzzy matching</small>"]
+    end
+
+    subgraph "Intelligence Layer"
+        Ear["EarEngine<br/><small>OpenWakeWord · Faster-Whisper</small>"]
+        LLM["LLMEngine<br/><small>Groq API · Llama 3.3 70B</small>"]
+        Vision["VisionEngine<br/><small>Ollama · Moondream</small>"]
+        TTS["VoiceEngine<br/><small>Piper TTS · ONNX · MD5 Cache</small>"]
+        RAG["RAG Pipeline<br/><small>DuckDuckGo News · Wikipedia</small>"]
+    end
+
+    subgraph "Hardware & External I/O"
+        Mic["Microphone<br/><small>16 kHz · int16 · 1280-sample chunks</small>"]
+        Spk["Audio Output<br/><small>Pygame Mixer · Sound Channels</small>"]
+        Phone["Android Device<br/><small>ADB over USB</small>"]
+        TG["Telegram Bot<br/><small>python-telegram-bot</small>"]
+    end
+
+    Mic --> Ear
+    Ear -->|"Wake trigger + transcription"| WS
+    WS <-->|"JSON state messages"| Brain
+    Brain --> LLM
+    Brain --> Vision
+    Brain --> TTS
+    LLM <--> RAG
+    TTS --> Spk
+    Brain <-->|"ADB shell commands"| Phone
+    Brain <-->|"Remote text commands"| TG
+    WS <-->|"State broadcasts"| HUD
+```
 
 ### Audio & Cognition Pipeline
 
 End-to-end latency from wake word detection to spoken response:
 
-![Audio & Cognition Pipeline](assets/pipeline.png)
+```mermaid
+sequenceDiagram
+    participant User
+    participant EarEngine
+    participant Brain
+    participant RAG
+    participant LLM
+    participant VoiceEngine
+
+    User->>EarEngine: "Hey Jarvis" (wake word)
+    Note over EarEngine: OpenWakeWord threshold > 0.35
+    EarEngine-->>Brain: Trigger detected
+    Brain-->>VoiceEngine: Fade music · Play chime (0.6 vol)
+    EarEngine->>EarEngine: sd.rec(5s, 16kHz, float32)
+    EarEngine->>EarEngine: Whisper transcribe (beam_size=5)
+    EarEngine->>EarEngine: Hallucination filter (5 regex checks)
+    EarEngine->>Brain: Route intent (text)
+    Brain->>RAG: Wikipedia summary + DuckDuckGo top 3
+    RAG-->>LLM: Inject [LIVE RAG CONTEXT]
+    Brain->>LLM: Groq streaming (max_tokens=150, temp=0.5)
+    LLM-->>Brain: Token stream
+    Brain->>VoiceEngine: Piper TTS → MD5-cached WAV
+    VoiceEngine->>User: Pygame Sound playback (vol 1.0)
+```
 
 ### WhatsApp Phone Bridge Automation
 
 Fully autonomous call initiation, conversation, and hangup — zero human intervention:
 
-![WhatsApp Automation](assets/whatsapp.png)
+```mermaid
+flowchart TD
+    A["User: 'Call XYZ on WhatsApp'"] --> B["Brain → ADBEngine"]
+    B --> C{"Screen on?"}
+    C -->|No| D["adb shell KEYCODE_WAKEUP"]
+    C -->|Yes| E["Force-stop com.whatsapp"]
+    D --> E
+    E --> F["Launch WhatsApp main activity"]
+    F --> G["Navigate to search → type contact name"]
+    G --> H["Parse UI XML dump → locate call button"]
+    H --> I["Tap voice call · Enable speakerphone"]
+    I --> J["Enter call_mode bypass"]
+    J --> K["Record remote audio → Whisper STT"]
+    K --> L["Feed transcription to LLM"]
+    L --> M["Speak AI response via phone speaker"]
+    M --> N{"Goodbye detected?"}
+    N -->|No| K
+    N -->|Yes| O["adb shell endcall · Exit call_mode"]
+```
 
 ---
 
