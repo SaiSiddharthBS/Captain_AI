@@ -51,6 +51,8 @@ run_v2.bat
 
 ## System Architecture
 
+![Architecture Overview](assets/neon_architecture.png)
+
 ### High-Level Block Diagram
 
 The system follows a **hub-and-spoke architecture** with the `Brain` class acting as the central intent router. All I/O subsystems — audio capture, speech synthesis, vision, LLM inference, and device control — are initialized as independent engine instances and orchestrated through a single `process_input()` → `_route_intent()` dispatch pipeline.
