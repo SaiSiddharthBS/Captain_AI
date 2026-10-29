@@ -13,7 +13,7 @@ class TelegramEngine:
         
     def start(self):
         if not self.token:
-            print(f"{Fore.YELLOW}[Telegram] No token found in config. Remote access disabled.{Style.RESET_ALL}")
+            print(f"{Fore.YELLOW}[Telegram] No token found. Remote access disabled.{Style.RESET_ALL}")
             return
             
         print(f"{Fore.CYAN}[Telegram] Initializing remote connection...{Style.RESET_ALL}")

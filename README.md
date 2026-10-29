@@ -2,27 +2,22 @@
 
 <img src="assets/Logo.png" width="400" alt="Captain AI Logo">
 
-### *The Sentinel Engine*
+<h1>Captain AI</h1>
+<p><strong>Voice, vision, and device actions from one desktop interface.</strong></p>
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/downloads/)
-[![Platform](https://img.shields.io/badge/platform-macOS_%7C_Windows-0078D6.svg?style=flat&logo=windows&logoColor=white)]()
-[![Status](https://img.shields.io/badge/status-Active_Development-brightgreen.svg?style=flat)]()
-[![Groq](https://img.shields.io/badge/Groq-Llama_3.3_70B-F55036.svg?style=flat&logo=meta&logoColor=white)](https://groq.com)
-[![Ollama](https://img.shields.io/badge/Ollama-Moondream_Vision-000000.svg?style=flat)](https://ollama.com)
-[![RAG](https://img.shields.io/badge/RAG-DuckDuckGo_%2B_Wikipedia-DE5833.svg?style=flat&logo=duckduckgo&logoColor=white)]()
-[![WebSocket](https://img.shields.io/badge/IPC-WebSocket_8765-010101.svg?style=flat)]()
-[![Piper TTS](https://img.shields.io/badge/TTS-Piper_ONNX-4B8BBE.svg?style=flat)]()
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Platform: Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)
+![Status: prototype](https://img.shields.io/badge/Status-Prototype-5B6573)
 
 ---
 
-A modular, voice-activated AI assistant engineered for local-first execution.<br>
-Combines real-time STT/TTS pipelines, hybrid RAG retrieval, screen-aware vision inference,<br>
-Android device automation via ADB, and a WebSocket-driven HUD overlay —<br>
-all orchestrated through a single intent-routing engine.
+Captain AI is an experimental voice assistant built around an intent router. Wake-word detection, speech recognition, speech synthesis, and optional screen vision run locally. The default conversational model uses Groq, while retrieval and Telegram require network access. A PyQt6 Ghost HUD and Android automation make the assistant visible and actionable across devices.
 
-[Quick Start](#-quick-start) · [Architecture](#-system-architecture) · [Features](#-feature-matrix) · [Tech Stack](#-technology-stack) · [Screenshots](#-media--demonstrations) · [Setup](#-setup--deployment) · [Privacy](#%EF%B8%8F-the-sovereign-data-doctrine)
+<strong>Project status:</strong> Windows is the documented setup target. macOS and Linux support are future work. The current default conversation path requires an API key and an internet connection; this is not a fully offline assistant.
 
-**Website - captain-wheat.vercel.app**
+[Quick Start](#quick-start) · [Architecture](#-system-architecture) · [Features](#feature-matrix) · [Tech Stack](#technology-stack) · [Screenshots](#media--demonstrations) · [Setup](#setup--deployment) · [Data boundaries](#data-boundaries)
+
+<a href="https://captain-wheat.vercel.app/">Project website</a>
 
 </div>
 
@@ -30,19 +25,18 @@ all orchestrated through a single intent-routing engine.
 
 ## Quick Start
 
-```bash
-# 1. Clone
+```powershell
+# Clone
 git clone https://github.com/SaiSiddharthBS/Captain_AI.git
 cd Captain_AI
 
-# 2. Configure API keys
-#    Edit config.json → insert your Groq API key and (optional) Telegram bot token
+# Supply the default conversation API key without editing tracked files.
+$env:GROQ_API_KEY = "YOUR_GROQ_API_KEY"
 
-# 3. One-command launch (creates venv, installs deps, downloads models, starts app)
-run_v2.bat
+# Bootstrap dependencies, models, and the app.
+.\run_v2.bat
 
-# 4. Summon the Ghost HUD overlay
-#    Press: Ctrl + Shift + Space
+# Press Ctrl + Shift + Space to summon the Ghost HUD.
 ```
 
 > **Minimum Requirements:** Python 3.10+, Windows 10/11, ~2 GB disk (models + dependencies), microphone input.
@@ -162,7 +156,7 @@ flowchart TD
 | | Live RAG injection | Wikipedia summary (top 1 result, 2 sentences) + DuckDuckGo News (top 3 snippets) injected as `[LIVE RAG CONTEXT]` into system prompt |
 | | System prompt | Enforces concise voice-assistant behavior: 1–2 sentences, no markdown, factual-only with RAG priority over training weights |
 | **Screen Vision** | Screen awareness | `Ollama` · `moondream` model · PIL screenshot → 512×512 thumbnail → base64 → streaming inference |
-| | Capabilities | Code summarization, image analysis, website content extraction — fully offline |
+| | Capabilities | Local screen-image analysis; retrieving website content still requires network access |
 | **Device Control** | WhatsApp automation | Full ADB pipeline: wake → force-stop → launch → search contact → tap call → speakerphone → AI conversation loop → auto-hangup |
 | | OS commands | Sleep, lock workstation, empty recycle bin (`ctypes` · `SHEmptyRecycleBinW`) |
 | | App launcher | Maps voice commands to local executables (Chrome, VS Code, Spotify, Notepad, Calculator) and shell URIs (Mail, Calendar, Recycle Bin) |
@@ -309,26 +303,23 @@ Captain_AI/
 
 ### Installation
 
-```bash
+```powershell
 # 1. Clone the repository
 git clone https://github.com/SaiSiddharthBS/Captain_AI.git
 cd Captain_AI
 
-# 2. Insert API credentials
-#    Open config.json and set:
-#    {
-#        "groq_api_key": "gsk_...",
-#        "telegram_token": "YOUR_BOT_TOKEN"  ← optional
-#    }
+# 2. Set the default conversation key in this PowerShell session.
+$env:GROQ_API_KEY = "YOUR_GROQ_API_KEY"
+# Optional remote interface: $env:TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN"
 
 # 3. Bootstrap everything (recommended)
-run_v2.bat
+.\run_v2.bat
 #    Creates venv → pip install -r requirements.txt
 #    Runs setup_v2.py → downloads Piper TTS binary + en_US-ryan-medium ONNX voice
 #    Launches the application
 
 # 4. Or manually start the V10 Ghost HUD
-venv\Scripts\python main_v10.py
+.\venv\Scripts\python main_v10.py
 #    Press Ctrl+Shift+Space to summon the overlay
 ```
 
@@ -347,8 +338,8 @@ python install_ffmpeg.py
 
 | Key | Type | Default | Description |
 |:---|:---|:---|:---|
-| `groq_api_key` | string | — | Groq API key for Llama 3.3 70B inference |
-| `telegram_token` | string | — | Telegram Bot API token for remote access |
+| `GROQ_API_KEY` | environment | — | Groq key for the default conversation model; overrides `config.json` |
+| `TELEGRAM_BOT_TOKEN` | environment | — | Optional bot token; overrides `config.json` |
 | `wake_word_sensitivity` | float | `0.35` | OpenWakeWord detection threshold (0.0–1.0) |
 | `default_volume` | float | `1.0` | Default music playback volume |
 | `voice_rate` | int | `150` | TTS speech rate |
@@ -357,17 +348,17 @@ python install_ffmpeg.py
 
 ---
 
-## The Sovereign Data Doctrine
+## Data boundaries
 
-Captain AI operates under strict data sovereignty principles:
+| Path | Where it runs |
+| --- | --- |
+| Wake word, speech recognition, speech synthesis | On the local machine after model setup |
+| Screen vision | Local Ollama and Moondream when enabled |
+| Memory, alarms, preferences | Local JSON files in `data/` |
+| Default conversation | Groq API over the network |
+| Retrieval and remote messages | Wikipedia, DuckDuckGo, and optional Telegram over the network |
 
-| Principle | Implementation |
-|:---|:---|
-| **No telemetry** | Zero analytics, tracking, or data harvesting — by design, not policy |
-| **Local-first storage** | All memory, alarms, and preferences stored as plain JSON on disk (`data/`) |
-| **Modular inference** | STT, TTS, and wake word run entirely on-device; LLM defaults to Groq Cloud but is swappable to local Ollama in `src/llm.py` |
-| **No training on your data** | Groq's inference API does not retain or train on input data |
-| **Air-gapped capable** | With Ollama as LLM backend, the entire system operates without internet |
+The current Groq conversation path is not air-gapped. A local conversational backend is listed in the roadmap and should be treated as future work. The Telegram bridge is experimental and does not enforce a chat allowlist; do not enable it for sensitive device actions until authorization checks are added. Keep credentials in environment variables rather than editing the tracked `config.json` template.
 
 ---
 

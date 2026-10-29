@@ -37,6 +37,16 @@ def load_config():
                 defaults.update(user_config)
         except Exception as e:
             print(f"Error loading config: {e}")
+
+    # Keep credentials out of the tracked config.json template. Environment
+    # variables take precedence over local file values when provided.
+    for key, variable in (
+        ("groq_api_key", "GROQ_API_KEY"),
+        ("telegram_token", "TELEGRAM_BOT_TOKEN"),
+    ):
+        value = os.getenv(variable)
+        if value:
+            defaults[key] = value
             
     return defaults
 

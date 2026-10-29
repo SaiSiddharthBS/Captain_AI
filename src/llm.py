@@ -14,7 +14,7 @@ class LLMEngine:
     def _check_connection(self):
         api_key = CONFIG.get("groq_api_key", "").strip()
         if not api_key:
-            print("Groq: API Key not found in config.json.")
+            print("Groq: API key not found. Set GROQ_API_KEY in your environment.")
             self.available = False
             return
             
